@@ -1,0 +1,29 @@
+{
+  "name": "taller-colaborativo-grupo-f",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhon-aparicio/Taller-Colaborativo-Grupo-F.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhon-aparicio/Taller-Colaborativo-Grupo-F/issues"
+  },
+  "homepage": "https://github.com/jhon-aparicio/Taller-Colaborativo-Grupo-F#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
