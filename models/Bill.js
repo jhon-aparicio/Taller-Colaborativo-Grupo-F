@@ -18,10 +18,17 @@ const billSchema = new Schema({
         type: Boolean,
         required: true
     },
-    details:{
-        type: Schema.Types.ObjectId,
-        ref: 'Detail'
-    }
+    details:[{
+        cant:{
+            type: Number,
+            required: true
+        },
+        product:{
+            type: Schema.Types.ObjectId,
+            ref: 'Product'
+        }
+
+    }]
 
 })
 

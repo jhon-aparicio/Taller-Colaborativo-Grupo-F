@@ -8,7 +8,8 @@ app.set('port',3000);
 app.set('views', path.join(__dirname, 'View'))
 
 //Middlewares
-
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 //Routes
 app.use(require('../routes/index'));

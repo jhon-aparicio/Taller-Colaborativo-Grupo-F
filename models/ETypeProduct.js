@@ -1,7 +1,7 @@
-const TypeProducts = {
+const ETypeProducts = {
     VIVERES: 'VIVERES',
     LICORES: 'LICORES',
     MEDICINAS: 'MEDICINAS',
     ASEO: 'ASEO'
   };
-  module.exports = TypeProducts
+  module.exports = ETypeProduct

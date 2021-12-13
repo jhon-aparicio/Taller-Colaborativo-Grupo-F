@@ -1,10 +1,14 @@
 'use strict'
 const mongoose = require('mongoose')
 
-const uri='mongodb+srv://ElectivaII:1234@tallerelectiva.omw7l.mongodb.net/test';
+const url='mongodb+srv://ElectivaII:1234@tallerelectiva.omw7l.mongodb.net/FacturationSystem';
 
-mongoose.connect(uri)
-    .then(()=>console.log('Connect to DataBase success'))
-    .catch((err)=>console.log(`Error to connect ${err}`))
+const db = mongoose.connect(url,{useNewUrlParser:true},(err)=>{
+    if(err){
+        console.log('Error en la conexion con Mongo')
+    }else{
+        console.log('Conect Success')
+    }
+})
 
- module.exports = mongoose
+module.exports = db
