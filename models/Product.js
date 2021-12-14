@@ -34,7 +34,6 @@ const prodSchema = new Schema({
         type: Date,
         required: true
     }
-    
 })
 
 module.exports = mongoose.model('Product',prodSchema)
