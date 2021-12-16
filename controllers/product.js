@@ -65,3 +65,22 @@ exports.ModificarProducto = function(req, res){
         res.status(200).jsonp("La modificacion del producto se ha hecho en el producto con Id: "+elProd);
     }) 
 }
+exports.isExpired = function (req,res){
+    const {idProduct} =req.params
+    const elProd = idProduct
+    const date = new Date()
+    ModProduct.findOne({idProduct:elProd},function(err,producto){
+        if(producto==null){
+            res.status(200).jsonp("Producto no registrado");
+        }else{
+            
+            if(producto.dateExpired>=date){
+                res.status(200).jsonp(false);
+                console.log('/GET/isExpired/false')
+            }else{
+                res.status(200).jsonp(true);
+                console.log('/GET/isExpired/true')
+            }
+        }
+    })   
+}

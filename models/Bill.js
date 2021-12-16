@@ -24,8 +24,8 @@ const billSchema = new Schema({
             required: true
         },
         product:{
-            type: Schema.Types.ObjectId,
-            ref: 'Product'
+            type: String,
+            required: true
         }
 
     }]
