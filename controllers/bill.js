@@ -1,6 +1,7 @@
 'use strict'
 
 const ModBill = require('../models/Bill')
+const ModDetail = require('../models/Detail')
 
 exports.ListaFactura =function(req, res){
     ModBill.find(function (err, factura){
@@ -12,7 +13,6 @@ exports.ListaFactura =function(req, res){
     })
 }
 exports.CrearFactura = function(req, res){
-    console.log("Hola")
     const element = new ModBill(req.body)
     console.log('/POST/CrearFactura')
     console.log(req.body)
@@ -44,7 +44,7 @@ exports.BuscarFactura = function(req, res){
     ModBill.findOne({number:laFact},function(err,factura){
         if(err) return res.send(500, err.message);
         if(factura!=null){
-            console.log('GET/BuscarFactura/'+laFact);
+            console.log('/GET/BuscarFactura/'+laFact);
             res.status(200).jsonp(factura);
         }else{
             res.status(200).jsonp("Factura no existente");
@@ -79,7 +79,21 @@ exports.ListaDetalle = function(req, res){
     })   
 }
 exports.AddDetail = function(req, res){
-    
+    const {number}=req.params
+    const laFact = number
+    const element = new ModDetail(req.body)
+    ModBill.findOne({number:laFact},function(err,factura){
+        if(factura==null){
+            res.status(200).jsonp("Factura no registrada")
+        }else{
+            console.log("/POST/AddDetial")
+            factura.details.splice(factura.details.length,1,element)
+            factura.save(function (err, factura){
+                
+            }) 
+            res.status(200).jsonp(factura.details); 
+        }
+    })  
 }
 exports.BorrarDetalle = function(req, res){
     const {number} =req.params

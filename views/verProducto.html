@@ -1,0 +1,130 @@
+
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style type="text/css">
+        body{
+            background: #ADA996;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+      </style>
+    <title>Ver Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/cf9ff598db.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/cf9ff598db.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../public/css/diseño.css">
+    <script src="consumo/producto.js"></script>
+</head>
+<body>
+    <nav class="barra">
+        <ul class="navegacion">
+            <li class="enlace" id="Productos">
+                <a href="#Productos" class="padre">
+                    <i class="fas fa-shopping-cart"></i>Productos
+                </a>
+                <div class="submenu">
+                    <a href="crearProducto.html">Crear Productos</a>
+                    <a href="editarProducto.html">Editar Productos</a>
+                    <a href="eliminarProducto.html">Eliminar Productos</a>
+                    <a href="verProducto.html">Listar Productos</a>
+                </div>
+            </li>
+            <li class="enlace" id="Facturas">
+                <a href="#Facturas" class="padre">
+                    <i class="fas fa-file-invoice"></i>Facturas
+                </a>
+                <div class="submenu">
+                    <a href="crearFactura.html">Crear Facturas</a>
+                    <a href="editarFactura.html">Editar Facturas</a>
+                    <a href="eliminarFactura.html">Eliminar Facturas</a>
+                    <a href="listaFactura.html">Listar Facturas</a>
+                </div>
+            </li>
+            <li class="enlace" id="Detalles">
+                <a href="#Detalles" class="padre">
+                    <i class="fas fa-shopping-basket"></i>Detalles
+                </a>
+                <div class="submenu">
+                    <a href="crearDetalle.html">Crear Detalles</a>
+                    <a href="editarDetalle.html">Editar Detalles</a>
+                    <a href="eliminarDetalle.html">Eliminar Detalles</a>
+                    <a href="listaDetalle.html">Listar Detalles</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <h2 class="col-sm-12">Buscar un producto</h2>
+        </div>
+        <form>
+            <div class="row">
+              <div class="col">
+                <label for="staticEmail2" class="sr-only">Email</label>
+                  <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Digite el id del producto:">
+              </div>
+              <div class="col">
+                <label for="inputPassword2" class="sr-only">id</label>
+                <input  class="form-control" id="idProd">
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-primary" onclick="showid()">Buscar</button>
+              </div>
+            </div>
+          </form>
+          <div >
+            <div class="form-group col-sm-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Cantidad en existencia</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">¿Esta Vencido?</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tblbodyID">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <h2 class="col-sm-12">Lista de Productos</h2>
+        </div>
+        <div >
+            <div class="form-group col-sm-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Fecha exp.</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tblbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</html>
